@@ -29,29 +29,28 @@ jobs:
 
       - name: "Fetch commit messages"
         id: fetch_commits
-        if: "${{ github.event_name }} == 'push' && ${{ github.ref_type }} == 'tag'"
-        run: |
-          if (!process.env.RELEASE_TAG) {
-            core.setFailed("The environment variable RELEASE_TAG is not defined.");
-            return;
-          }
+        uses: "actions/github-script@v7.0.1"
+        with:
+          
+          script: |
+            if (!process.env.RELEASE_TAG) {
+              core.setFailed("The environment variable RELEASE_TAG is not defined.");
+              return;
+            }
 
-          try {
-            const response = await github.rest.repos.compareCommits({
-              base: 'tags/' + process.env.RELEASE_TAG,
-              head: 'HEAD',
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
+            try {
+              const response = await github.rest.repos.compareCommits({
+                base: 'tags/' + process.env.RELEASE_TAG,
+                head: 'HEAD',
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
 
-            const commitMessages = response.data.commits.map(commit => commit.commit.message).join('\n');
-            core.exportVariable('COMMIT_MESSAGES', commitMessages);
-          } catch (error) {
-            core.setFailed(error.message);
-          }
-        shell: "bash"
-        env:
-          RELEASE_TAG: ${{ env.RELEASE_TAG }}
+              const commitMessages = response.data.commits.map(commit => commit.commit.message).join('\n');
+              core.exportVariable('COMMIT_MESSAGES', commitMessages);
+            } catch (error) {
+              core.setFailed(error.message);
+            }
 
       - name: "Create release"
         uses: "actions/github-script@v7.0.1"
