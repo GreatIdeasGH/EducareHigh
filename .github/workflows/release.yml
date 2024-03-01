@@ -4,6 +4,8 @@ on:
   push:
     tags: 
       - 'v*'
+  milestone:
+    types: [closed]
 
 env:
   IMAGE_NAME: greatideasgh/educarehigh
@@ -12,36 +14,47 @@ permissions:
   contents: write
 
 jobs:
-  BuildDocker:
-    name: Docker Image
+  # BuildDocker:
+  #   name: Docker Image
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+          
+  #     - name: Nerdbank.GitVersioning
+  #       uses: dotnet/nbgv@v0.4.2
+  #       with:
+  #         path: .
+
+  #     - name: Set version
+  #       run: echo "SimpleVersion=$(nbgv get-version -v SimpleVersion)" >> $GITHUB_ENV     
+      
+  #     - name: Generate Docker metadata
+  #       id: meta
+  #       uses: docker/metadata-action@v3
+  #       with:
+  #         images: docker.io/${{ env.IMAGE_NAME }}
+  #         tags: |
+  #           type=ref,event=branch
+  #           type=semver,pattern={{version}}
+  #         flavor: |
+  #           latest=true    
+
+  #     - name: Build Docker image
+  #       run: |
+  #         docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
+
+  create-release-notes:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          
-      - name: Nerdbank.GitVersioning
-        uses: dotnet/nbgv@v0.4.2
-        with:
-          path: .
-
-      - name: Set version
-        run: echo "SimpleVersion=$(nbgv get-version -v SimpleVersion)" >> $GITHUB_ENV     
-      
-      - name: Generate Docker metadata
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          images: docker.io/${{ env.IMAGE_NAME }}
-          tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-          flavor: |
-            latest=true    
-
-      - name: Build Docker image
-        run: |
-          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
+    - uses: actions/checkout@master
+    - name: Create Release Notes
+      uses: docker://decathlon/release-notes-generator-action:2.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OUTPUT_FOLDER: temp_release_notes
+        USE_MILESTONE_TITLE: "true"
 
   release:
     name: Release pushed tag
