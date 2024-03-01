@@ -35,9 +35,9 @@ jobs:
           exclude: 'perf,other,breaking'
           file: './CHANGELOG.md'
           files_to_commit: 'CHANGELOG.md'
-          branch: main
-          user: 'user@user.com'
-          userName: 'A User'
+          branch: master
+          user: 'geraldmaale@hotmail.com'
+          userName: 'geraldmaale'
       
       - name: Release
         uses: softprops/action-gh-release@v1
