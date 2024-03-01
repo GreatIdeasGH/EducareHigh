@@ -1,0 +1,63 @@
+name: Build and Push Educare Docker Images
+
+on:
+  push:
+    tags: 
+      - 'v*'
+
+env:
+  IMAGE_NAME: greatideasgh/educarehigh
+
+permissions:
+  contents: write
+
+jobs:
+  BuildDocker:
+    name: Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Nerdbank.GitVersioning
+        uses: dotnet/nbgv@v0.4.2
+        with:
+          path: .
+
+      - name: Set version
+        run: echo "SimpleVersion=$(nbgv get-version -v SimpleVersion)" >> $GITHUB_ENV     
+      
+      - name: Generate Docker metadata
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: docker.io/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+          flavor: |
+            latest=true    
+
+      - name: Build Docker image
+        run: |
+          docker build --file src/Web/docker/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
+
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create Release
+        id: create_release
+        uses: yyx990803/release-tag@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }} 
+          body: |
+            Please refer to [CHANGELOG.md](https://github.com/greatideasgh/educare/blob/master/CHANGELOG.md) for the release notes.
