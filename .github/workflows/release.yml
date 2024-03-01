@@ -41,7 +41,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --file src/Web/docker/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
+          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
 
   release:
     name: Release pushed tag
