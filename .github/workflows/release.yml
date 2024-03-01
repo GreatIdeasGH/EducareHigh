@@ -28,20 +28,16 @@ jobs:
         run: echo ${{ github.sha }} > Release.txt
 
       - name: Generate Release Notes
-        id: release_notes
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        uses: danpetitt/changelog-file-generator@v2.2.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            ${{ steps.release_notes.outputs.changelog }}
+          release_version: 'v2.2.1'
+          exclude: 'perf,other,breaking'
+          file: './CHANGELOG.md'
+          files_to_commit: 'CHANGELOG.md'
+          branch: main
+          user: 'user@user.com'
+          userName: 'A User'
       
       - name: Release
         uses: softprops/action-gh-release@v1
