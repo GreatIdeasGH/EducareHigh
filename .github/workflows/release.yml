@@ -4,14 +4,17 @@ on:
   push:
     tags: 
       - 'v*'
-  milestone:
-    types: [closed]
+  # milestone:
+  #   types: [closed]
 
 env:
   IMAGE_NAME: greatideasgh/educarehigh
 
 permissions:
   contents: write
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
 
 jobs:
   # BuildDocker:
@@ -45,16 +48,16 @@ jobs:
   #       run: |
   #         docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.SimpleVersion }} .
 
-  create-release-notes:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Create Release Notes
-      uses: docker://decathlon/release-notes-generator-action:2.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OUTPUT_FOLDER: temp_release_notes
-        USE_MILESTONE_TITLE: "true"
+  # create-release-notes:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@master
+  #   - name: Create Release Notes
+  #     uses: docker://decathlon/release-notes-generator-action:2.0.1
+  #     env:
+  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       OUTPUT_FOLDER: temp_release_notes
+  #       USE_MILESTONE_TITLE: "true"
 
   release:
     name: Release pushed tag
@@ -64,13 +67,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create Release
-        id: create_release
-        uses: yyx990803/release-tag@master
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          cache: npm
+          node-version: lts/*
+      - run: npm clean-install
+      - run: npm audit signatures
+      # pinned version updated automatically by Renovate.
+      # details at https://semantic-release.gitbook.io/semantic-release/usage/installation#global-installation
+      - run: npx semantic-release@21.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }} 
-          body: |
-            Please refer to [CHANGELOG.md](https://github.com/greatideasgh/educare/blob/master/CHANGELOG.md) for the release notes.
+
+      # - name: Create Release
+      #   id: create_release
+      #   uses: yyx990803/release-tag@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: Release ${{ github.ref }} 
+      #     body: |
+      #       Please refer to [CHANGELOG.md](https://github.com/greatideasgh/educare/blob/master/CHANGELOG.md) for the release notes.
