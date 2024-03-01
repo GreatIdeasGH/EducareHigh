@@ -1,6 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using System.Reflection
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">GreatIdeas.EducareHigh.Web</a>
+        <a class="navbar-brand" href="">Educare High</a>
     </div>
 </div>
 
@@ -26,5 +28,18 @@
             </NavLink>
         </div>
     </nav>
+    <br />
+    <footer>
+        <p class="text-white text-muted mx-16">.NET @_productVersion</p>
+    </footer>
 </div>
 
+
+@code {
+    private string _productVersion;
+
+    protected override void OnInitialized()
+    {
+        _productVersion = Assembly.GetEntryAssembly()?.GetName()?.Version?.ToString()!;
+    }
+}
