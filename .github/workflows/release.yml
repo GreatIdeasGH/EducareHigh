@@ -4,8 +4,8 @@ on:
   push:
     tags: 
       - 'v*'
-    branches:
-      - master
+    # branches:
+    #   - master
   # milestone:
   #   types: [closed]
 
@@ -62,24 +62,17 @@ jobs:
   #       USE_MILESTONE_TITLE: "true"
 
   release:
-    name: Release pushed tag
+    name: Release 
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: echo ${{ github.sha }} > Release.txt
+      - name: Test
+        run: cat Release.txt
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          fetch-depth: 0
-
-      - run: npx semantic-release@21.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Create Release
-      #   id: create_release
-      #   uses: yyx990803/release-tag@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{ github.ref }}
-      #     release_name: Release ${{ github.ref }} 
-      #     body: |
-      #       Please refer to [CHANGELOG.md](https://github.com/greatideasgh/educare/blob/master/CHANGELOG.md) for the release notes.
+          files: Release.txt
