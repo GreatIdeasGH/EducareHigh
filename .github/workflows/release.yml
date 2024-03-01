@@ -23,25 +23,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Extract Release Notes
-        id: release_notes
-        run: |
-          # Use Git log to fetch commit messages since the last tag
-          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-          previous_tag=$(git describe --tags --abbrev=0)
-          current_tag=$(git describe --tags)
-          release_notes=$(git log --pretty=format:"%s" $previous_tag..$current_tag)
-          echo "::set-output name=notes::$release_notes"
-
-      - name: Build
-        run: echo "${{ github.sha }}" > Release.txt
-      
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        
+      - name: Create Release
+        uses: "ergebnis/.github/actions/github/release/create@1.8.0"
         with:
-          files: Release.txt
-          body: ${{ steps.release_notes.outputs.notes }}
-          draft: false
-          prerelease: false
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      # - name: Get result
+      #   run: echo "${{steps.set-result.outputs.result}}"
+
+      # - name: Build
+      #   run: echo "${{ github.sha }}" > Release.txt
+      
+      # - name: Release
+      #   uses: softprops/action-gh-release@v1
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     files: Release.txt
+      #     body: ${{ steps.release_notes.outputs.notes }}
+      #     draft: false
+      #     prerelease: false
