@@ -2,8 +2,8 @@
 
 namespace GreatIdeas.EducareHigh.Web;
 
-public interface IAccountDataservice 
-{ 
+public interface IAccountDataservice
+{
     // Login with username and password
     Task<LoginResponse?> Login(LoginRequest request);
     // Register with username and password
@@ -12,11 +12,20 @@ public interface IAccountDataservice
     Task Logout();
     // Get the current user
     Task<UserDto?> GetCurrentUser();
-    
+    // Delete user
+    Task DeleteUser(string id);
+
 }
 
 public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
 {
+    public async Task DeleteUser(string id)
+    {
+        var response = await httpClient.DeleteAsync($"api/account/{id}");
+        response.EnsureSuccessStatusCode();
+    }
+
+
     public async Task<UserDto?> GetCurrentUser()
     {
         var response = await httpClient.GetFromJsonAsync<UserDto>("api/account/currentuser");
@@ -25,9 +34,7 @@ public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
 
     public async Task<LoginResponse?> Login(LoginRequest request)
     {
-        // Call the API to login
         var response = await httpClient.PostAsJsonAsync("api/account/login", request);
-        // Read the response
         var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
         return loginResponse;
     }
@@ -35,14 +42,21 @@ public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
     public async Task Logout()
     {
         var response = await httpClient.PostAsync("api/account/logout", null);
-        response.EnsureSuccessStatusCode();        
+        response.EnsureSuccessStatusCode();
+        if (response.IsSuccessStatusCode)
+        {
+            await httpClient.SendAsync(new HttpRequestMessage
+            {
+                Method = new HttpMethod("GET"),
+                RequestUri = new Uri(httpClient.BaseAddress + "api/account/logout"),
+                Content = new StringContent("")
+            });
+        }
     }
 
     public async Task<RegisterResponse?> Register(RegisterRequest request)
     {
-        // Call the API to register
         var response = await httpClient.PostAsJsonAsync("api/account/register", request);
-        // Read the response
         var registerResponse = await response.Content.ReadFromJsonAsync<RegisterResponse>();
         return registerResponse;
     }

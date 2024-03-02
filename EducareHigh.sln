@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4E92021B-97B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatIdeas.EducareHigh.Web", "src\Web\GreatIdeas.EducareHigh.Web.csproj", "{D3E0FCEC-1F90-4829-8BD4-9B56A73D4227}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatIdeas.EducareHigh.Shared", "src\Shared\GreatIdeas.EducareHigh.Shared.csproj", "{AEC2FF68-D706-4914-804A-58E6673284D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{D3E0FCEC-1F90-4829-8BD4-9B56A73D4227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3E0FCEC-1F90-4829-8BD4-9B56A73D4227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3E0FCEC-1F90-4829-8BD4-9B56A73D4227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC2FF68-D706-4914-804A-58E6673284D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC2FF68-D706-4914-804A-58E6673284D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC2FF68-D706-4914-804A-58E6673284D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC2FF68-D706-4914-804A-58E6673284D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D3E0FCEC-1F90-4829-8BD4-9B56A73D4227} = {4E92021B-97BB-4E2C-B66E-65D01D351A19}
+		{AEC2FF68-D706-4914-804A-58E6673284D6} = {4E92021B-97BB-4E2C-B66E-65D01D351A19}
 	EndGlobalSection
 EndGlobal
