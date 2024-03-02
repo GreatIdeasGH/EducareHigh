@@ -8,6 +8,9 @@ public interface IAccountDataservice
     Task<LoginResponse?> Login(LoginRequest request);
     // Register with username and password
     Task<RegisterResponse?> Register(RegisterRequest request);
+    // Logout
+    Task Logout();
+    
 }
 
 public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
@@ -19,6 +22,12 @@ public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
         // Read the response
         var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
         return loginResponse;
+    }
+
+    public async Task Logout()
+    {
+        var response = await httpClient.PostAsync("api/account/logout", null);
+        response.EnsureSuccessStatusCode();        
     }
 
     public async Task<RegisterResponse?> Register(RegisterRequest request)
