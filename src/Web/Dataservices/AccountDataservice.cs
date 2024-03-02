@@ -10,11 +10,19 @@ public interface IAccountDataservice
     Task<RegisterResponse?> Register(RegisterRequest request);
     // Logout
     Task Logout();
+    // Get the current user
+    Task<UserDto?> GetCurrentUser();
     
 }
 
 public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
 {
+    public async Task<UserDto?> GetCurrentUser()
+    {
+        var response = await httpClient.GetFromJsonAsync<UserDto>("api/account/currentuser");
+        return response;
+    }
+
     public async Task<LoginResponse?> Login(LoginRequest request)
     {
         // Call the API to login
