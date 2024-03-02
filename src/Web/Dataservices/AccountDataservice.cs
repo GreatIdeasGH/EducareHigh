@@ -7,7 +7,7 @@ public interface IAccountDataservice
     // Login with username and password
     Task<LoginResponse?> Login(LoginRequest request);
     // Register with username and password
-    Task<RegisterResponse> Register(RegisterRequest request);
+    Task<RegisterResponse?> Register(RegisterRequest request);
 }
 
 public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
@@ -21,8 +21,12 @@ public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
         return loginResponse;
     }
 
-    public Task<RegisterResponse> Register(RegisterRequest request)
+    public async Task<RegisterResponse?> Register(RegisterRequest request)
     {
-        throw new NotImplementedException();
+        // Call the API to register
+        var response = await httpClient.PostAsJsonAsync("api/account/register", request);
+        // Read the response
+        var registerResponse = await response.Content.ReadFromJsonAsync<RegisterResponse>();
+        return registerResponse;
     }
 }
