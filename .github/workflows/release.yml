@@ -4,11 +4,9 @@ on:
   push:
     tags: 
       - 'v*'
-    # branches:
-    #   - master
-  # milestone:
-  #   types: [closed]
-
+  # manually trigger a workflow_dispatch event
+  workflow_dispatch:
+  
 
 permissions:
   contents: write
@@ -29,9 +27,4 @@ jobs:
         uses: release-drafter/release-drafter@v6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
         
-      # - name: Create Release
-      #   uses: "geraldmaale/.github/actions/github/release/create@v1.0.0"
-      #   with:
-      #     github-token: "${{ secrets.GITHUB_TOKEN }}"
