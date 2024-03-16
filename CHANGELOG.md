@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.4...v1.20.0) (2024-03-16)
+
+
+### Features
+
+* Add Product entity class ([f55fad2](https://github.com/GreatIdeasGH/EducareHigh/commit/f55fad23772b009d5e007b3083ea9b151d4902c0))
+
 <<<<<<< HEAD
 
 
