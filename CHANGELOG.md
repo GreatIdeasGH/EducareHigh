@@ -1,3 +1,13 @@
+
+
+## [1.18.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.21.0...v1.18.3) (2024-03-16)
+
+
+### Bug Fixes
+
+* Remove releaseNotes command from .release-it.json ([23bd1ba](https://github.com/GreatIdeasGH/EducareHigh/commit/23bd1bac984aa1b6cd54a287d38fb7a0e0b957ad))
+* Update GitHub workflow and release configuration ([c6cb687](https://github.com/GreatIdeasGH/EducareHigh/commit/c6cb687b3b9527bfb6f8ea9c8c001e97ec687a2e))
+
 # Semantic Versioning Changelog
 
 # [1.21.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.20.0...v1.21.0) (2024-03-16)
