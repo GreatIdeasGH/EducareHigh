@@ -2,7 +2,7 @@ name: ReleaseIt
 
 on:
   push:
-    tags:
+    branches:
       - "master"
 
 permissions:
