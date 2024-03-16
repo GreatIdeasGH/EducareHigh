@@ -1,3 +1,17 @@
+# [1.16.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.15.1...v1.16.0) (2024-03-16)
+
+
+### Bug Fixes
+
+* Add welcome message to app.vue ([3b2b34b](https://github.com/GreatIdeasGH/EducareHigh/commit/3b2b34b0db56224d31da668463b26bdb08f56dc8))
+
+
+### Features
+
+* Add AccountDto and update namespace in UserDto ([b0620fe](https://github.com/GreatIdeasGH/EducareHigh/commit/b0620fedf0ea3280b4b2401c31695ee0039e54b2))
+* Add UserUpdateDto to UserDto.cs ([235492a](https://github.com/GreatIdeasGH/EducareHigh/commit/235492a64d520f1da50f8cc02bc77a9f5b54a545))
+* Added UserPhoneUpdateDto to UserDto.cs ([68a8346](https://github.com/GreatIdeasGH/EducareHigh/commit/68a834635ea050c91d0853b03ee57f6ca74b387e))
+
 # [1.15.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.14.0...v1.15.0) (2024-03-16)
 
 
