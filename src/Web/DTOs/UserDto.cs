@@ -8,3 +8,8 @@ public sealed record class UserDto(
     string? LastName,
     string? PhoneNumber
 );
+
+public sealed record class UserEmailUpdateDto(
+    string? Id,
+    string? Email
+);
