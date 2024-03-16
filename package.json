@@ -1,10 +1,9 @@
 {
-  "name": "EducareHigh",
+  "name": "educarehigh",
   "version": "1.18.1",
   "description": "",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "author": "geraldmaale",
   "license": "ISC",
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
@@ -22,5 +21,20 @@
   ],
   "scripts": {
     "prepare": "husky"
+  },
+  "release": {
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
   }
 }
