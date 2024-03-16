@@ -1,3 +1,11 @@
+# [1.21.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.20.0...v1.21.0) (2024-03-16)
+
+
+### Features
+
+* Add ProductCreateDto to ProductDto.cs ([0b06369](https://github.com/GreatIdeasGH/EducareHigh/commit/0b063690d94e22a46df97fe420136ac12a85a1f6))
+* Add ProductDto class ([b0ba58a](https://github.com/GreatIdeasGH/EducareHigh/commit/b0ba58acc896330c31ac83f65b153c6852ed4b30))
+
 # Semantic Versioning Changelog
 
 # [1.20.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.4...v1.20.0) (2024-03-16)
