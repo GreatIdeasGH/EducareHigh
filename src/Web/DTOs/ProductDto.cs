@@ -7,3 +7,10 @@ public sealed class ProductDto
     public decimal Price { get; set; }
 }
 
+public sealed class ProductCreateDto
+{
+    public string? Name { get; set; }
+    public decimal Price { get; set; }
+    public string? SKU { get; set; }
+
+}
