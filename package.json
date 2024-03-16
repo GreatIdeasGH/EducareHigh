@@ -13,6 +13,7 @@
     "release-it": "^17.1.1"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "release-it"
   }
 }
