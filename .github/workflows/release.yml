@@ -3,9 +3,9 @@ name: Release
 on:
   push:
     branches:
-      - "v1.17.*"
+      - "v1.17*"
     tags:
-      - "v1.17.*"
+      - "v1.17*"
 
 permissions:
   contents: write
