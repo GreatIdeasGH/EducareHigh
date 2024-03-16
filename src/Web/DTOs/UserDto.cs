@@ -19,3 +19,9 @@ public sealed record class UserPasswordUpdateDto(
     string? OldPassword,
     string? NewPassword
 );
+
+public sealed record class UserPhoneUpdateDto(
+    string? Id,
+    string? PhoneNumber
+);
+
