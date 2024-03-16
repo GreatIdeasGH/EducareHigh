@@ -1,3 +1,12 @@
+
+
+## [2.1.5](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.4...v2.1.5) (2024-03-16)
+
+
+### 🐛 Bug Fixes
+
+* Remove header from .release-it.json ([edcb1fe](https://github.com/GreatIdeasGH/EducareHigh/commit/edcb1fe5546299f04c4f70ad5bd53fd3ea3e349f))
+
 ## What's Changed
 
 ## [2.1.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.3...v2.1.4) (2024-03-16)
