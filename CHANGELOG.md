@@ -1,5 +1,12 @@
 
 
+## [2.1.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.2...v2.1.3) (2024-03-16)
+
+
+### Bug Fixes
+
+* Add .NET build workflow and remove semantic release workflow ([6483574](https://github.com/GreatIdeasGH/EducareHigh/commit/648357476279cdbe5e80e766d0ad7a77d158b191))
+
 ## [2.1.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.1...v2.1.2) (2024-03-16)
 
 
