@@ -2,7 +2,7 @@
 
 namespace GreatIdeas.EducareHigh.Web;
 
-public class UserDataservice
+public class UserDataservice : IUserDataservice
 {
     private readonly HttpClient _httpClient;
 
