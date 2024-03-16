@@ -6,7 +6,6 @@
   },
   "github": {
     "release": true,
-    "releaseNotes": "generate-release-notes.sh --from=${latestTag} --to=${tagName}",
     "comments": {
       "submit": true,
       "issue": ":rocket: _This issue has been resolved in v${version}. See [${releaseName}](${releaseUrl}) for release notes._",
