@@ -2,8 +2,8 @@ name: Semantic release
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - master
 
 permissions:
   contents: read
