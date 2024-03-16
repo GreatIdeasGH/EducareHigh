@@ -1,5 +1,12 @@
 
 
+## [2.1.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.0...v2.1.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* Update CI workflow, add npm install and npm run release, and update version to 2.1.0 ([a7597f2](https://github.com/GreatIdeasGH/EducareHigh/commit/a7597f20607587af420a56dc29bea701510ff014))
+
 ## [2.1.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.0...v2.1.2) (2024-03-16)
 
 
