@@ -13,3 +13,9 @@ public sealed record class UserEmailUpdateDto(
     string? Id,
     string? Email
 );
+
+public sealed record class UserPasswordUpdateDto(
+    string? Id,
+    string? OldPassword,
+    string? NewPassword
+);
