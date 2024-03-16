@@ -1,4 +1,4 @@
-﻿namespace GreatIdeas.EducareHigh.Web;
+﻿namespace GreatIdeas.EducareHigh.Web.DTOs;
 
 public sealed record class UserDto(
     string? Id,
