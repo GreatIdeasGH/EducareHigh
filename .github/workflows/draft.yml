@@ -2,8 +2,8 @@ name: Release Drafter
 
 on:
   push:
-    branches:
-      - master  
+    tags:
+      - "bv*"
 
 permissions:
   contents: write
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   release:
-    name: Release 
+    name: Release
     runs-on: ubuntu-22.04
 
     steps:
@@ -26,4 +26,3 @@ jobs:
         uses: release-drafter/release-drafter@v6.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        

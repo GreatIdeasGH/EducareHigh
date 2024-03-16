@@ -1,9 +1,9 @@
-name: Release 
+name: Release
 
 on:
   push:
-    tags: 
-      - 'v*'  
+    tags:
+      - "bv*"
 
 permissions:
   contents: write
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   release:
-    name: Release 
+    name: Release
     runs-on: ubuntu-22.04
 
     steps:
@@ -43,4 +43,3 @@ jobs:
         run: |
           git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
           git push origin refs/tags/v${{ steps.version.outputs.major }} -f
-        

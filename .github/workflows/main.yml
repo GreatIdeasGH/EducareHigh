@@ -2,8 +2,10 @@ name: Semantic release
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - "v*"
+    # branches:
+    #   - master
 jobs:
   publish:
     runs-on: ubuntu-latest
