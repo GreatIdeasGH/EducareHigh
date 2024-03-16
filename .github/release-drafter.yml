@@ -21,6 +21,7 @@ version-resolver:
   minor:
     labels:
       - "type: feature"
+      - "type: feat"
   patch:
     labels:
       - "type: bug"
