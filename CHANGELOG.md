@@ -1,4 +1,11 @@
+## What's Changed
 
+## [2.1.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.3...v2.1.4) (2024-03-16)
+
+
+### 🐛 Bug Fixes
+
+* Update release-it configuration for conventional commits ([906674e](https://github.com/GreatIdeasGH/EducareHigh/commit/906674eb64190fc09513fdd9705e46f1d0de1597))
 
 ## [2.1.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.2...v2.1.3) (2024-03-16)
 
