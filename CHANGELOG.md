@@ -1,5 +1,17 @@
 
 
+# [1.19.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.18.3...v1.19.0) (2024-03-16)
+
+
+### Bug Fixes
+
+* Remove version number from package.json ([72294f6](https://github.com/GreatIdeasGH/EducareHigh/commit/72294f6d3329c80fdaf38cdd219e567f4f747a6f))
+
+
+### Features
+
+* Add CI workflow for release automation ([8e6456f](https://github.com/GreatIdeasGH/EducareHigh/commit/8e6456f827ca0389cb3cc0e91a24bf0f12991147))
+
 ## [1.18.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.21.0...v1.18.3) (2024-03-16)
 
 
