@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="communityToolkit.Diagnostics" Version="8.2.2" />
+  </ItemGroup>
+
 </Project>
