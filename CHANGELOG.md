@@ -1,5 +1,17 @@
 
 
+# [2.1.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.0...v2.1.0) (2024-03-16)
+
+
+### Bug Fixes
+
+* Update CI configuration to trigger on tags and update package version ([a21b38b](https://github.com/GreatIdeasGH/EducareHigh/commit/a21b38b2e6a06da5387baf0157f417382d1c5732))
+
+
+### Features
+
+* Add User entity class ([7c37009](https://github.com/GreatIdeasGH/EducareHigh/commit/7c370091ffb1217577348ee0a7c4d690cc41d3dc))
+
 # [1.19.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.18.3...v1.19.0) (2024-03-16)
 
 
