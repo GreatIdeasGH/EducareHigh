@@ -1,4 +1,5 @@
-﻿using GreatIdeas.EducareHigh.Web.Responses;
+﻿using GreatIdeas.EducareHigh.Web.DTOs;
+using GreatIdeas.EducareHigh.Web.Responses;
 
 namespace GreatIdeas.EducareHigh.Web;
 
