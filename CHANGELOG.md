@@ -1,5 +1,20 @@
 
 
+## [2.1.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.2...v2.1.3) (2024-03-16)
+
+
+### Bug Fixes
+
+* Add .NET build workflow and remove semantic release workflow ([6483574](https://github.com/GreatIdeasGH/EducareHigh/commit/648357476279cdbe5e80e766d0ad7a77d158b191))
+
+## [2.1.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.1...v2.1.2) (2024-03-16)
+
+
+### Bug Fixes
+
+* Update CI workflow to trigger on all branches ([8e619e6](https://github.com/GreatIdeasGH/EducareHigh/commit/8e619e67a96d2336fd032cf8b89cd0acda851788))
+* Update release command in CI workflow ([47a9e4c](https://github.com/GreatIdeasGH/EducareHigh/commit/47a9e4c300dc87e84b3855334b119375bcc65a97))
+
 ## [2.1.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.0...v2.1.1) (2024-03-16)
 
 
