@@ -42,3 +42,8 @@ public sealed record class UserCreateDto(
     string? PhoneNumber,
     string? Password
 );
+
+public sealed record class UserLoginDto(
+    string? Email,
+    string? Password
+);
