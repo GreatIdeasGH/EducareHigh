@@ -25,3 +25,20 @@ public sealed record class UserPhoneUpdateDto(
     string? PhoneNumber
 );
 
+public sealed record class UserUpdateDto(
+    string? Id,
+    string? UserName,
+    string? Email,
+    string? FirstName,
+    string? LastName,
+    string? PhoneNumber
+);
+
+public sealed record class UserCreateDto(
+    string? UserName,
+    string? Email,
+    string? FirstName,
+    string? LastName,
+    string? PhoneNumber,
+    string? Password
+);
