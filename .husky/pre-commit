@@ -1,3 +1,2 @@
+dotnet build  --tl
 cd ./src/educarehigh-spa && pnpm run build
-dotnet build -c Release /tl
-dotnet test /tl
