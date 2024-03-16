@@ -15,6 +15,8 @@ public interface IAccountDataservice
     Task<UserDto?> GetCurrentUser();
     // Delete user
     Task DeleteUser(string id);
+    // Forgot password
+    Task ForgotPassword(string email);
 
 }
 
@@ -26,6 +28,11 @@ public class AccountDataservice(HttpClient httpClient) : IAccountDataservice
         response.EnsureSuccessStatusCode();
     }
 
+    public async Task ForgotPassword(string email)
+    {
+        var response = await httpClient.PostAsJsonAsync("api/account/forgotpassword", new { email });
+        response.EnsureSuccessStatusCode();
+    }
 
     public async Task<UserDto?> GetCurrentUser()
     {
