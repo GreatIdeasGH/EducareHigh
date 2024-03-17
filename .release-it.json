@@ -1,5 +1,5 @@
 {
-  "branches": ["v/[0-9]+.[0-9]+.x"],
+  "branches": ["v/[0-9]+.*"],
   "git": {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}"
