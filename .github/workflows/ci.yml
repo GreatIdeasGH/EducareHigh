@@ -67,7 +67,7 @@ jobs:
         run: |
           echo version before: $(nbgv get-version -v SimpleVersion)
           npm install
-          VERSION=$(npx release-it --release-version | tr -d '"')
+          VERSION=$(npx release-it --release-version | tail -n 1 | tr -d '"')
           nbgv set-version $VERSION
           echo version after: $(nbgv get-version -v SimpleVersion)
           git add . && git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
