@@ -72,7 +72,15 @@ jobs:
           echo version after: $(nbgv get-version -v SimpleVersion)
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add . && git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
+
+          # Check if the branch is clean
+          if ! git diff --quiet; then
+            # Branch is not clean, commit changes
+            git add .
+            git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
+          else
+            echo "Branch is clean, skipping commit"
+          fi
 
       - name: Set up Git to release
         run: |
