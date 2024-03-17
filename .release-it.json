@@ -14,7 +14,7 @@
   },
   "npm": {
     "publish": false,
-    "ignoreVersion": false
+    "ignoreVersion": true
   },
   "hooks": {},
   "plugins": {

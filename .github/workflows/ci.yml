@@ -58,9 +58,6 @@ jobs:
           fetch-depth: 0
 
       - name: Install NBGV tool
-        # run: |
-        #   dotnet tool install --tool-path . nbgv
-        #   .\nbgv cloud
         uses: dotnet/nbgv@v0.4.2
         with:
           path: .
