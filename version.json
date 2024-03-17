@@ -1,9 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/main/src/NerdBank.GitVersioning/version.schema.json",
   "version": "2.2",
-  "buildNumberOffset": 0,
+  // "buildNumberOffset": 0,
   "assemblyVersion": {
     "precision": "revision"
   },
-  "publicReleaseRefSpec": ["^refs/heads/v\\d+\\.\\d+$"]
+  "publicReleaseRefSpec": ["^refs/heads/v\\d+\\.\\d+"],
+  "release": {
+    "tagName": "v{version}",
+    "branchName": "v{version}",
+    "versionIncrement": "minor",
+    "firstUnstableTag": "alpha"
+  }
 }
