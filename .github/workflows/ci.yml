@@ -57,34 +57,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      - run: npm install
-      - run: npx release-it --ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: version
-      #   id: version
-      #   run: |
-      #     tag=${GITHUB_REF/refs\/tags\//}
-      #     version=${tag#v}
-      #     major=${version%%.*}
-      #     echo "tag=${tag}" >> $GITHUB_OUTPUT
-      #     echo "version=${version}" >> $GITHUB_OUTPUT
-      #     echo "major=${major}" >> $GITHUB_OUTPUT
-      #     echo Current version is $version
-      #     echo Current tag is $tag
-
       - name: Get current version
         id: version
         run: echo "CURRENT_TAG=$(git describe --tags)" >> $GITHUB_ENV
-
-      # - name: Setup .NET
-      #   uses: actions/setup-dotnet@v3
-      #   with:
-      #     dotnet-version: 8.0.x
 
       - name: Install NBGV tool
         # run: |
@@ -94,11 +69,20 @@ jobs:
         with:
           path: .
           setCommonVars: true
-          stamp: package.json
+          stamp: ./package.json
 
       - name: get version
         run: |
           echo version: $(nbgv get-version -v SimpleVersion)
+
+      - name: Set up Git to release
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          npm install
+          npx release-it --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Docker metadata
         id: meta
