@@ -62,18 +62,22 @@ jobs:
         with:
           path: .
           setCommonVars: true
-          stamp: ./package.json
+          # stamp: ./package.json
 
-      - name: get version
+      - name: Set app version
         run: |
-          echo version: $(nbgv get-version -v SimpleVersion)
+          echo version before: $(nbgv get-version -v SimpleVersion)
+          npm install
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          nbgv set-version $(npx release-it --release-version)
+          echo version after: $(nbgv get-version -v SimpleVersion)
+          git add . && git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
 
       - name: Set up Git to release
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git add . && git commit -m "chore: updated package.json version to v$(nbgv get-version -v SimpleVersion)"
-          npm install
           npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
