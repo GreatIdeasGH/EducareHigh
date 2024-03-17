@@ -21,6 +21,11 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
+      - name: Install NBGV tool
+        uses: dotnet/nbgv@v0.4.2
+        with:
+          path: .
+
       - name: Restore dependencies
         run: dotnet restore
 
