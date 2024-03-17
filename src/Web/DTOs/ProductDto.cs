@@ -1,4 +1,4 @@
-namespace Web.DTOs;
+namespace GreatIdeas.EducareHigh.Web.DTOs;
 
 public sealed class ProductDto
 {
