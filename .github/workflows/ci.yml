@@ -16,6 +16,7 @@ permissions: {}
 
 env:
   IMAGE_NAME: "greatideasgh/educarehigh"
+  CURRENT_TAG: "latest"
 
 defaults:
   run:
@@ -67,15 +68,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: version
+      # - name: version
+      #   id: version
+      #   run: |
+      #     tag=${GITHUB_REF/refs\/tags\//}
+      #     version=${tag#v}
+      #     major=${version%%.*}
+      #     echo "tag=${tag}" >> $GITHUB_OUTPUT
+      #     echo "version=${version}" >> $GITHUB_OUTPUT
+      #     echo "major=${major}" >> $GITHUB_OUTPUT
+      #     echo Current version is $version
+      #     echo Current tag is $tag
+
+      - name: Get current tag
         id: version
-        run: |
-          tag=${GITHUB_REF/refs\/tags\//}
-          version=${tag#v}
-          major=${version%%.*}
-          echo "tag=${tag}" >> $GITHUB_OUTPUT
-          echo "version=${version}" >> $GITHUB_OUTPUT
-          echo "major=${major}" >> $GITHUB_OUTPUT
+        run: echo "CURRENT_TAG=$(git describe --tags)" >> $GITHUB_ENV
 
       - name: Nerdbank.GitVersioning
         uses: dotnet/nbgv@v0.4.2
@@ -84,8 +91,8 @@ jobs:
 
       - name: Set version
         run: |
-          $(nbgv set-version ${{ steps.version.outputs.major }} )
-          echo "SimpleVersion=$(nbgv get-version -v SimpleVersion)" >> $GITHUB_ENV
+          $(nbgv set-version ${{ env.CURRENT_TAG }} )
+          echo $(nbgv get-version -v SimpleVersion)
 
       - name: Generate Docker metadata
         id: meta
@@ -100,4 +107,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.major }} .
+          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.CURRENT_TAG }} .
