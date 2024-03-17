@@ -4,5 +4,5 @@
   "assemblyVersion": {
     "precision": "revision"
   },
-  "publicReleaseRefSpec": ["^refs/heads/v\\d+\\.\\d+"]
+  "publicReleaseRefSpec": ["^refs/heads/v\\d+\\.\\d+$"]
 }
