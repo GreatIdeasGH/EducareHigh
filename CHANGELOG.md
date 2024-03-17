@@ -1,5 +1,19 @@
 
 
+## [2.5.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.3.3...v2.5.4) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Remove buildNumberOffset from version.json ([68d1c68](https://github.com/GreatIdeasGH/EducareHigh/commit/68d1c6813e7d473d32012543d0e27ce63cc299e1))
+* Update release-it and version.json configuration ([3eba6c2](https://github.com/GreatIdeasGH/EducareHigh/commit/3eba6c20eddcb8acca4fc1baf1f8dd1112784cdd))
+* Update version to 2.5 and set ignoreVersion to true in .release-it.json ([6ff23c5](https://github.com/GreatIdeasGH/EducareHigh/commit/6ff23c58555b8df43fd3ca579c59027425dae58e))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.5.3 ([482696b](https://github.com/GreatIdeasGH/EducareHigh/commit/482696b2d498222e5f88b5dfa24a96bd6cad8288))
+
 ## [2.3.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.4.0...v2.3.3) (2024-03-17)
 
 
