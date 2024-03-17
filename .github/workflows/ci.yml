@@ -94,7 +94,7 @@ jobs:
         with:
           path: .
           setCommonVars: true
-          # stamp: package.json
+          stamp: package.json
 
       - name: get version
         run: |
