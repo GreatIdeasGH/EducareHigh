@@ -1,5 +1,13 @@
 
 
+## [2.1.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.6...v2.1.7) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Update CI workflow to use latest tag for Docker image ([647c4ca](https://github.com/GreatIdeasGH/EducareHigh/commit/647c4ca11497c5532f3ba2ea88439002eabf2230))
+* Update workflow step name to reflect its purpose ([a062333](https://github.com/GreatIdeasGH/EducareHigh/commit/a0623330265eb0ee3f87a6372ce427cacf0dc419))
+
 ## [2.1.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.5...v2.1.6) (2024-03-17)
 
 
