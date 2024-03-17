@@ -80,7 +80,7 @@ jobs:
       #     echo Current version is $version
       #     echo Current tag is $tag
 
-      - name: Get current tag
+      - name: Get current version
         id: version
         run: echo "CURRENT_TAG=$(git describe --tags)" >> $GITHUB_ENV
 
