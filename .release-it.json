@@ -1,5 +1,5 @@
 {
-  "branches": ["v/[0-9]+.*"],
+  "branches": ["v[0-9]+.[0-9]+.x"],
   "git": {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}"
@@ -14,7 +14,7 @@
   },
   "npm": {
     "publish": false,
-    "ignoreVersion": true
+    "ignoreVersion": false
   },
   "hooks": {},
   "plugins": {

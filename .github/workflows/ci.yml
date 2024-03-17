@@ -3,7 +3,7 @@ name: ReleaseIt
 on:
   push:
     branches:
-      - "v/[0-9]+.*"
+      - "v[0-9]+.[0-9]+.x"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -57,48 +57,38 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      - run: npm install
-      - run: npx release-it --ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: version
-      #   id: version
-      #   run: |
-      #     tag=${GITHUB_REF/refs\/tags\//}
-      #     version=${tag#v}
-      #     major=${version%%.*}
-      #     echo "tag=${tag}" >> $GITHUB_OUTPUT
-      #     echo "version=${version}" >> $GITHUB_OUTPUT
-      #     echo "major=${major}" >> $GITHUB_OUTPUT
-      #     echo Current version is $version
-      #     echo Current tag is $tag
-
-      - name: Get current version
-        id: version
-        run: echo "CURRENT_TAG=$(git describe --tags)" >> $GITHUB_ENV
-
-      # - name: Setup .NET
-      #   uses: actions/setup-dotnet@v3
-      #   with:
-      #     dotnet-version: 8.0.x
-
       - name: Install NBGV tool
-        # run: |
-        #   dotnet tool install --tool-path . nbgv
-        #   .\nbgv cloud
         uses: dotnet/nbgv@v0.4.2
         with:
           path: .
           setCommonVars: true
-          # stamp: package.json
 
-      - name: get version
+      - name: Set app version
         run: |
-          echo version: $(nbgv get-version -v SimpleVersion)
+          echo version before: $(nbgv get-version -v SimpleVersion)
+          npm install
+          VERSION=$(npx release-it --release-version | tail -n 1 | tr -d '"')
+          nbgv set-version $VERSION
+          echo version after: $(nbgv get-version -v SimpleVersion)
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          # Check if the branch is clean
+          if ! git diff --quiet; then
+            # Branch is not clean, commit changes
+            git add .
+            git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
+          else
+            echo "Branch is clean, skipping commit"
+          fi
+
+      - name: Set up Git to release
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          npx release-it --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate Docker metadata
         id: meta

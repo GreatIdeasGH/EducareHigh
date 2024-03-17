@@ -1,5 +1,134 @@
 
 
+## [2.6.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.9...v2.6.0) (2024-03-17)
+
+
+### 🚀 Features
+
+* Add Category DTO and update namespace in ProductDto ([fef664d](https://github.com/GreatIdeasGH/EducareHigh/commit/fef664dccd06e1e7c8b1fa0c912f6d0eda7cab1d))
+
+
+### 🐛 Bug Fixes
+
+* Update version.json to v{version} ([055a821](https://github.com/GreatIdeasGH/EducareHigh/commit/055a8210fbcd1bdc90eee633f6fc479f0aba39af))
+
+## [2.5.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.8...v2.5.9) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Fix release-it command to extract version correctly ([9b3fd2f](https://github.com/GreatIdeasGH/EducareHigh/commit/9b3fd2f03977026ccac6c7d5601910832f921ea8))
+* Remove unnecessary devDependencies ([20d96ba](https://github.com/GreatIdeasGH/EducareHigh/commit/20d96baf6e347cdb50570176b84fd9124dcb9e2d))
+* Update app version using nbgv and release-it ([53c1456](https://github.com/GreatIdeasGH/EducareHigh/commit/53c14568236140608aaef8e971b29c26b0df0cbb))
+
+
+### 🧰 Maintenance
+
+* Update ci.yml version.json to 2.5.8 ([e95f0e2](https://github.com/GreatIdeasGH/EducareHigh/commit/e95f0e22f87c53431576bf6b3c30c262aaabbba6))
+* updated version.json version and set Git user name and email ([b4f6ecc](https://github.com/GreatIdeasGH/EducareHigh/commit/b4f6eccc2ad289243558144195f639cb560d3ca6))
+* updated version.json version to v2.5.9 ([ec6c6fd](https://github.com/GreatIdeasGH/EducareHigh/commit/ec6c6fd5868e768c7db4b0fd4964ec43ca2085f4))
+
+## [2.5.8](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.6...v2.5.8) (2024-03-17)
+
+
+### 🧰 Maintenance
+
+* Update version.json to 2.5.7 ([4c6a809](https://github.com/GreatIdeasGH/EducareHigh/commit/4c6a809c8489ec5e1e5fcdd343fe5df7543fcb9b))
+* updated package.json version to v2.5.7 ([730692a](https://github.com/GreatIdeasGH/EducareHigh/commit/730692ab4478986341f07a1f4632513fcc55c1e5))
+
+## [2.5.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.4...v2.5.6) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Update version to 2.5.4 ([5cf9540](https://github.com/GreatIdeasGH/EducareHigh/commit/5cf95408b9e44c5d7a1cc0aad5da0b9ebb70f362))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.5.5 ([3d84676](https://github.com/GreatIdeasGH/EducareHigh/commit/3d84676b5a4158ca5181edc5e0f63d7d16346658))
+
+## [2.5.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.3.3...v2.5.4) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Remove buildNumberOffset from version.json ([68d1c68](https://github.com/GreatIdeasGH/EducareHigh/commit/68d1c6813e7d473d32012543d0e27ce63cc299e1))
+* Update release-it and version.json configuration ([3eba6c2](https://github.com/GreatIdeasGH/EducareHigh/commit/3eba6c20eddcb8acca4fc1baf1f8dd1112784cdd))
+* Update version to 2.5 and set ignoreVersion to true in .release-it.json ([6ff23c5](https://github.com/GreatIdeasGH/EducareHigh/commit/6ff23c58555b8df43fd3ca579c59027425dae58e))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.5.3 ([482696b](https://github.com/GreatIdeasGH/EducareHigh/commit/482696b2d498222e5f88b5dfa24a96bd6cad8288))
+
+## [2.3.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.4.0...v2.3.3) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* update version ([96a1031](https://github.com/GreatIdeasGH/EducareHigh/commit/96a10317a96c47e75cadd785336372de2b59ee0c))
+* Update version to 2.3 ([d93b33e](https://github.com/GreatIdeasGH/EducareHigh/commit/d93b33e1f9638d620b02b74089faa8b757e75887))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.3.2 ([d789e81](https://github.com/GreatIdeasGH/EducareHigh/commit/d789e811a1691e662ca2733cdab87671d6ac8c6d))
+
+## [2.4.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.2.7...v2.4.0) (2024-03-17)
+
+
+### 🚀 Features
+
+* Update version to 2.3 ([32bd620](https://github.com/GreatIdeasGH/EducareHigh/commit/32bd6204f20d80d8628e4321cb44d84520a35dc7))
+
+
+### 🐛 Bug Fixes
+
+* Update publicReleaseRefSpec in version.json ([6c98f91](https://github.com/GreatIdeasGH/EducareHigh/commit/6c98f911be5ae4765b92c82e353930a0279d36e0))
+* Update publicReleaseRefSpec in version.json ([5249b37](https://github.com/GreatIdeasGH/EducareHigh/commit/5249b37f8874c12110a4f09ddf9292a054151819))
+* Update versioning configuration ([8aadf3e](https://github.com/GreatIdeasGH/EducareHigh/commit/8aadf3e50084b338908e034bbfcf57d28e3bb7ef))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.3.1 ([b395f0c](https://github.com/GreatIdeasGH/EducareHigh/commit/b395f0c9e77154ce7fa33fd80f11acd685308270))
+
+## [2.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.10...v2.2.7) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Refactor GitHub Actions workflow ([904243b](https://github.com/GreatIdeasGH/EducareHigh/commit/904243ba44586d0946047f5a0a7cf27ac3459b2b))
+* Update package.json version using NBGV tool ([637daa6](https://github.com/GreatIdeasGH/EducareHigh/commit/637daa6938510fb2a91c08a02f1768d7484fd6b5))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.2.7 ([b5d91ce](https://github.com/GreatIdeasGH/EducareHigh/commit/b5d91ce264595bf58d6daf033c63105ac0a1ccff))
+
+## [2.1.10](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.9...v2.1.10) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Update stamp in ci.yml and set ignoreVersion to false in release-it.json ([b83c7cd](https://github.com/GreatIdeasGH/EducareHigh/commit/b83c7cd1b2556a2ec21d17c4b89ea75cd42ea94b))
+
+## [2.1.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.8...v2.1.9) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Add NBGV tool for versioning ([ed0801f](https://github.com/GreatIdeasGH/EducareHigh/commit/ed0801f8bca78e78ba385bf567c9a4613be7ba4c))
+* Add version schema URL to version.json ([7523d0c](https://github.com/GreatIdeasGH/EducareHigh/commit/7523d0ce49b7ad24d98817feb9dcb765aba390d5))
+* Update build workflow and version.json ([f863d03](https://github.com/GreatIdeasGH/EducareHigh/commit/f863d03aa45b98e543054b8cd238033c83bf1369))
+* Update release branch pattern in CI workflow and release configuration ([7ac44e0](https://github.com/GreatIdeasGH/EducareHigh/commit/7ac44e04a5ef49dc4fbb05260d015af683313fc4))
+* Update version to 2.2 ([a183f39](https://github.com/GreatIdeasGH/EducareHigh/commit/a183f3928119fe54df8c9b2bf85ae491b167607c))
+* Update version to 2.2.x in version.json ([83079e4](https://github.com/GreatIdeasGH/EducareHigh/commit/83079e4bb5ff6c172b38d59bcaeb8e9e86df7410))
+* Update version.json with new version and build number offset ([8429366](https://github.com/GreatIdeasGH/EducareHigh/commit/84293667025ed90781f911680448fd04a6a1e3d9))
+* Update versioning configuration ([e7dac06](https://github.com/GreatIdeasGH/EducareHigh/commit/e7dac06b21d43c245a1affc4f9fa0f4f9ccf0b20))
+* Update versioning regex patterns ([5cb70c9](https://github.com/GreatIdeasGH/EducareHigh/commit/5cb70c9408cca61961a3b57eedfb889fc9e98b67))
+
 ## [2.1.8](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.7...v2.1.8) (2024-03-17)
 
 ## [2.1.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.6...v2.1.7) (2024-03-17)
