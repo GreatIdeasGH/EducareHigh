@@ -1,5 +1,24 @@
 
 
+## [2.4.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.2.7...v2.4.0) (2024-03-17)
+
+
+### 🚀 Features
+
+* Update version to 2.3 ([32bd620](https://github.com/GreatIdeasGH/EducareHigh/commit/32bd6204f20d80d8628e4321cb44d84520a35dc7))
+
+
+### 🐛 Bug Fixes
+
+* Update publicReleaseRefSpec in version.json ([6c98f91](https://github.com/GreatIdeasGH/EducareHigh/commit/6c98f911be5ae4765b92c82e353930a0279d36e0))
+* Update publicReleaseRefSpec in version.json ([5249b37](https://github.com/GreatIdeasGH/EducareHigh/commit/5249b37f8874c12110a4f09ddf9292a054151819))
+* Update versioning configuration ([8aadf3e](https://github.com/GreatIdeasGH/EducareHigh/commit/8aadf3e50084b338908e034bbfcf57d28e3bb7ef))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.3.1 ([b395f0c](https://github.com/GreatIdeasGH/EducareHigh/commit/b395f0c9e77154ce7fa33fd80f11acd685308270))
+
 ## [2.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.10...v2.2.7) (2024-03-17)
 
 
