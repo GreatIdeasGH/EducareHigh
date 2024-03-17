@@ -1,5 +1,6 @@
 {
-  "version": "2.2.x",
+  "version": "2.2",
+  "buildNumberOffset": 0,
   "assemblyVersion": {
     "precision": "revision"
   },
