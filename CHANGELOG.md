@@ -1,5 +1,18 @@
 
 
+## [2.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.10...v2.2.7) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Refactor GitHub Actions workflow ([904243b](https://github.com/GreatIdeasGH/EducareHigh/commit/904243ba44586d0946047f5a0a7cf27ac3459b2b))
+* Update package.json version using NBGV tool ([637daa6](https://github.com/GreatIdeasGH/EducareHigh/commit/637daa6938510fb2a91c08a02f1768d7484fd6b5))
+
+
+### 🧰 Maintenance
+
+* updated package.json version to v2.2.7 ([b5d91ce](https://github.com/GreatIdeasGH/EducareHigh/commit/b5d91ce264595bf58d6daf033c63105ac0a1ccff))
+
 ## [2.1.10](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.9...v2.1.10) (2024-03-17)
 
 
