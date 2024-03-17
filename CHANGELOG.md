@@ -1,5 +1,20 @@
 
 
+## [2.1.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.8...v2.1.9) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Add NBGV tool for versioning ([ed0801f](https://github.com/GreatIdeasGH/EducareHigh/commit/ed0801f8bca78e78ba385bf567c9a4613be7ba4c))
+* Add version schema URL to version.json ([7523d0c](https://github.com/GreatIdeasGH/EducareHigh/commit/7523d0ce49b7ad24d98817feb9dcb765aba390d5))
+* Update build workflow and version.json ([f863d03](https://github.com/GreatIdeasGH/EducareHigh/commit/f863d03aa45b98e543054b8cd238033c83bf1369))
+* Update release branch pattern in CI workflow and release configuration ([7ac44e0](https://github.com/GreatIdeasGH/EducareHigh/commit/7ac44e04a5ef49dc4fbb05260d015af683313fc4))
+* Update version to 2.2 ([a183f39](https://github.com/GreatIdeasGH/EducareHigh/commit/a183f3928119fe54df8c9b2bf85ae491b167607c))
+* Update version to 2.2.x in version.json ([83079e4](https://github.com/GreatIdeasGH/EducareHigh/commit/83079e4bb5ff6c172b38d59bcaeb8e9e86df7410))
+* Update version.json with new version and build number offset ([8429366](https://github.com/GreatIdeasGH/EducareHigh/commit/84293667025ed90781f911680448fd04a6a1e3d9))
+* Update versioning configuration ([e7dac06](https://github.com/GreatIdeasGH/EducareHigh/commit/e7dac06b21d43c245a1affc4f9fa0f4f9ccf0b20))
+* Update versioning regex patterns ([5cb70c9](https://github.com/GreatIdeasGH/EducareHigh/commit/5cb70c9408cca61961a3b57eedfb889fc9e98b67))
+
 ## [2.1.8](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.7...v2.1.8) (2024-03-17)
 
 ## [2.1.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.6...v2.1.7) (2024-03-17)
