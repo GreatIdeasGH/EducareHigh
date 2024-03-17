@@ -1,5 +1,12 @@
 
 
+## [2.1.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.5...v2.1.6) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Update .release-it.json and .github/workflows/ci.yml ([a1e6c1d](https://github.com/GreatIdeasGH/EducareHigh/commit/a1e6c1dc0ed241c810c8a7f0e260749d3639c9c3))
+
 ## [2.1.5](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.4...v2.1.5) (2024-03-16)
 
 
