@@ -15,5 +15,5 @@
     "prepare": "husky",
     "release": "release-it"
   },
-  "version": "2.2.7"
+  "version": "2.3.1"
 }
