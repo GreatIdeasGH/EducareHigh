@@ -1,5 +1,17 @@
 
 
+## [2.6.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.9...v2.6.0) (2024-03-17)
+
+
+### 🚀 Features
+
+* Add Category DTO and update namespace in ProductDto ([fef664d](https://github.com/GreatIdeasGH/EducareHigh/commit/fef664dccd06e1e7c8b1fa0c912f6d0eda7cab1d))
+
+
+### 🐛 Bug Fixes
+
+* Update version.json to v{version} ([055a821](https://github.com/GreatIdeasGH/EducareHigh/commit/055a8210fbcd1bdc90eee633f6fc479f0aba39af))
+
 ## [2.5.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.8...v2.5.9) (2024-03-17)
 
 
