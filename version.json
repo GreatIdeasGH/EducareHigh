@@ -1,8 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/main/src/NerdBank.GitVersioning/version.schema.json",
-  "version": "2.1.7",
+  "version": "2.1",
   "assemblyVersion": {
     "precision": "revision"
   },
-  "publicReleaseRefSpec": ["^refs/heads/v\\d+\\.\\d+$"]
+  "publicReleaseRefSpec": [
+    "^refs/heads/v\\d+\\.\\d+$" // we also release branches starting with vN.N]
+  ]
 }
