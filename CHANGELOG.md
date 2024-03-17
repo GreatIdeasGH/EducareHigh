@@ -1,5 +1,12 @@
 
 
+## [2.1.10](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.9...v2.1.10) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Update stamp in ci.yml and set ignoreVersion to false in release-it.json ([b83c7cd](https://github.com/GreatIdeasGH/EducareHigh/commit/b83c7cd1b2556a2ec21d17c4b89ea75cd42ea94b))
+
 ## [2.1.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.1.8...v2.1.9) (2024-03-17)
 
 
