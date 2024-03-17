@@ -70,6 +70,8 @@ jobs:
           VERSION=$(npx release-it --release-version | tail -n 1 | tr -d '"')
           nbgv set-version $VERSION
           echo version after: $(nbgv get-version -v SimpleVersion)
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add . && git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
 
       - name: Set up Git to release
