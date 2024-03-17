@@ -84,15 +84,24 @@ jobs:
         id: version
         run: echo "CURRENT_TAG=$(git describe --tags)" >> $GITHUB_ENV
 
-      - name: Nerdbank.GitVersioning
+      # - name: Setup .NET
+      #   uses: actions/setup-dotnet@v3
+      #   with:
+      #     dotnet-version: 8.0.x
+
+      - name: Install NBGV tool
+        # run: |
+        #   dotnet tool install --tool-path . nbgv
+        #   .\nbgv cloud
         uses: dotnet/nbgv@v0.4.2
         with:
           path: .
+          setCommonVars: true
+          # stamp: package.json
 
-      - name: Set version
+      - name: get version
         run: |
-          $(nbgv set-version ${{ env.CURRENT_TAG }} )
-          echo $(nbgv get-version -v SimpleVersion)
+          echo version: $(nbgv get-version -v SimpleVersion)
 
       - name: Generate Docker metadata
         id: meta
