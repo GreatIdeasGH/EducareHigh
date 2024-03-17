@@ -1,5 +1,21 @@
 
 
+## [2.5.9](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.8...v2.5.9) (2024-03-17)
+
+
+### 🐛 Bug Fixes
+
+* Fix release-it command to extract version correctly ([9b3fd2f](https://github.com/GreatIdeasGH/EducareHigh/commit/9b3fd2f03977026ccac6c7d5601910832f921ea8))
+* Remove unnecessary devDependencies ([20d96ba](https://github.com/GreatIdeasGH/EducareHigh/commit/20d96baf6e347cdb50570176b84fd9124dcb9e2d))
+* Update app version using nbgv and release-it ([53c1456](https://github.com/GreatIdeasGH/EducareHigh/commit/53c14568236140608aaef8e971b29c26b0df0cbb))
+
+
+### 🧰 Maintenance
+
+* Update ci.yml version.json to 2.5.8 ([e95f0e2](https://github.com/GreatIdeasGH/EducareHigh/commit/e95f0e22f87c53431576bf6b3c30c262aaabbba6))
+* updated version.json version and set Git user name and email ([b4f6ecc](https://github.com/GreatIdeasGH/EducareHigh/commit/b4f6eccc2ad289243558144195f639cb560d3ca6))
+* updated version.json version to v2.5.9 ([ec6c6fd](https://github.com/GreatIdeasGH/EducareHigh/commit/ec6c6fd5868e768c7db4b0fd4964ec43ca2085f4))
+
 ## [2.5.8](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.6...v2.5.8) (2024-03-17)
 
 
