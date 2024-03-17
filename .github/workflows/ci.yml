@@ -4,13 +4,49 @@ on:
   push:
     branches:
       - "master"
+      - "[0-9]+.[0-9]+.x"
+  pull_request:
+    types: [opened, synchronize, reopened]
 
-permissions:
-  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+env:
+  IMAGE_NAME: "greatideasgh/educarehigh"
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --tl
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal --tl
+
   release:
-    name: Release
+    name: Release and publish
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -30,3 +66,38 @@ jobs:
       - run: npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: version
+        id: version
+        run: |
+          tag=${GITHUB_REF/refs\/tags\//}
+          version=${tag#v}
+          major=${version%%.*}
+          echo "tag=${tag}" >> $GITHUB_OUTPUT
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo "major=${major}" >> $GITHUB_OUTPUT
+
+      - name: Nerdbank.GitVersioning
+        uses: dotnet/nbgv@v0.4.2
+        with:
+          path: .
+
+      - name: Set version
+        run: |
+          $(nbgv set-version ${{ steps.version.outputs.major }} )
+          echo "SimpleVersion=$(nbgv get-version -v SimpleVersion)" >> $GITHUB_ENV
+
+      - name: Generate Docker metadata
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: docker.io/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+          flavor: |
+            latest=true
+
+      - name: Build Docker image
+        run: |
+          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.major }} .
