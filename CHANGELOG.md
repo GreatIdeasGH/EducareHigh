@@ -1,4 +1,14 @@
+# Changelog
 
+## [2.6.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.7.0...v2.6.1) (2026-02-04)
+
+### 🧰 Maintenance
+
+* remove redundant test job from CI workflow ([861bb7c](https://github.com/GreatIdeasGH/EducareHigh/commit/861bb7c10a5a5f07555176f85051d55e6fb701ed))
+* remove unnecessary directory change in CI workflow for package.json version update ([8d4030a](https://github.com/GreatIdeasGH/EducareHigh/commit/8d4030a862d843eb363213e2b32c3b414fc86479))
+* update @release-it/conventional-changelog to version 10.0.4 ([ba88ddd](https://github.com/GreatIdeasGH/EducareHigh/commit/ba88ddd6c85530bfa90b854f7df3fd0a70c33502))
+* update package.json version to use release-it v19.0.0 and streamline version update process ([62e6265](https://github.com/GreatIdeasGH/EducareHigh/commit/62e62653882fe0d406c2f70afaaec164dd61a152))
+* update path for package.json in CI workflow ([0503600](https://github.com/GreatIdeasGH/EducareHigh/commit/0503600aee187caf84af9f62439b2f3a1b56707d))
 
 ## [2.6.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.5.9...v2.6.0) (2024-03-17)
 
