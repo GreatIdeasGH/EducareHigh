@@ -48,9 +48,7 @@ jobs:
           jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
           mv package.tmp.json package.json
           cat package.json
-
-      - name: Commit version update
-        run: |
+          # Commit the changes if there are any
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           if git diff --staged --quiet; then
@@ -74,7 +72,6 @@ jobs:
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
           npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
