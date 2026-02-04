@@ -70,16 +70,8 @@ jobs:
 
       - name: Set up Git to release
         run: |
-          # Commit the changes if there are any
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git add .
-            git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
-            git push
-          fi
+          # Show git changes
+          git status
           npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
