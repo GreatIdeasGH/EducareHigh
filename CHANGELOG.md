@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.2.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.0...v3.2.1) (2026-02-04)
+
+### 🐛 Bug Fixes
+
+* configure Git user for release-it in CI workflow ([78dff7b](https://github.com/GreatIdeasGH/EducareHigh/commit/78dff7b73534120cef0fb71b019ce236b99480f2))
+
+### 🧰 Maintenance
+
+* comment out package.json version update step in CI workflow ([3031534](https://github.com/GreatIdeasGH/EducareHigh/commit/30315345ad518cd7df6450822d22a2d48e860f21))
+
 ## [3.2.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.1.0...v3.2.0) (2026-02-04)
 
 ### 🚀 Features
