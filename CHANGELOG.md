@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.8.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.7.0...v2.8.1) (2026-02-04)
+
+### 🐛 Bug Fixes
+
+* add Node.js setup and install dependencies in CI workflow ([6979a4f](https://github.com/GreatIdeasGH/EducareHigh/commit/6979a4fb434356723fcb19e4d038fca781218c00))
+* ensure package.json is only committed if changes exist ([710cf42](https://github.com/GreatIdeasGH/EducareHigh/commit/710cf42cc8f4b9bd8a92cd8116ef5a6af9af63e3))
+
+### 🧰 Maintenance
+
+* release v2.6.1 ([1ff029d](https://github.com/GreatIdeasGH/EducareHigh/commit/1ff029d35df790e2ad9e14581442e172cf8d2591))
+* remove redundant test job from CI workflow ([861bb7c](https://github.com/GreatIdeasGH/EducareHigh/commit/861bb7c10a5a5f07555176f85051d55e6fb701ed))
+* remove unnecessary directory change in CI workflow for package.json version update ([8d4030a](https://github.com/GreatIdeasGH/EducareHigh/commit/8d4030a862d843eb363213e2b32c3b414fc86479))
+* update @release-it/conventional-changelog to version 10.0.4 ([ba88ddd](https://github.com/GreatIdeasGH/EducareHigh/commit/ba88ddd6c85530bfa90b854f7df3fd0a70c33502))
+* update package.json version to 2.7.0 [skip ci] ([494d9a5](https://github.com/GreatIdeasGH/EducareHigh/commit/494d9a5952e9f367ac35eb61bfd396e03b06197b))
+* update package.json version to 2.8.0 [skip ci] ([2e5e8bf](https://github.com/GreatIdeasGH/EducareHigh/commit/2e5e8bfc280ec02db4c60ab54a5799319ed4907c))
+* update package.json version to use release-it v19.0.0 and streamline version update process ([62e6265](https://github.com/GreatIdeasGH/EducareHigh/commit/62e62653882fe0d406c2f70afaaec164dd61a152))
+* update path for package.json in CI workflow ([0503600](https://github.com/GreatIdeasGH/EducareHigh/commit/0503600aee187caf84af9f62439b2f3a1b56707d))
+* update version in package.json to 2.7.0 ([313d25d](https://github.com/GreatIdeasGH/EducareHigh/commit/313d25df88ec2811b5e63158ac13f327b2033407))
+* update version to 2.8.0 in version.json ([714ff67](https://github.com/GreatIdeasGH/EducareHigh/commit/714ff67604218e3afdff607bbd3100f638c313b2))
+
 ## [2.6.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.7.0...v2.6.1) (2026-02-04)
 
 ### 🧰 Maintenance
