@@ -5,9 +5,8 @@
   "author": "geraldmaale",
   "license": "ISC",
   "devDependencies": {
-    "@release-it/conventional-changelog": "^8.0.1",
-    "husky": "^9.0.11",
-    "release-it": "^19.0.0"
+    "@release-it/conventional-changelog": "^10.0.4",
+    "husky": "^9.0.11"
   },
   "scripts": {
     "prepare": "husky",
