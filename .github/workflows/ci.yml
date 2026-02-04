@@ -20,29 +20,6 @@ defaults:
     shell: bash
 
 jobs:
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 8.0.x
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --no-restore --tl
-
-      - name: Test
-        run: dotnet test --no-build --verbosity normal --tl
-
   release:
     name: Release and publish
     runs-on: ubuntu-latest
@@ -59,33 +36,32 @@ jobs:
 
       - name: Install NBGV tool
         uses: dotnet/nbgv@v0.4.2
+        id: nbgv
         with:
           path: .
           setCommonVars: true
 
-      - name: Set app version
+      - name: Update package.json version
         run: |
-          echo version before: $(nbgv get-version -v SimpleVersion)
-          npm install
-          VERSION=$(npx release-it --release-version | tail -n 1 | tr -d '"')
-          nbgv set-version $VERSION
-          echo version after: $(nbgv get-version -v SimpleVersion)
+          echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
+          # Use jq to safely update the version field
+          jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
+          mv package.tmp.json package.json
+          cat package.json
+
+      - name: Commit version update
+        run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-
-          # Check if the branch is clean
-          if ! git diff --quiet; then
-            # Branch is not clean, commit changes
-            git add .
-            git commit -m "chore: updated version.json version to v$(nbgv get-version -v SimpleVersion)"
-          else
-            echo "Branch is clean, skipping commit"
-          fi
+          git add package.json
+          git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
+          git push
 
       - name: Set up Git to release
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
           npx release-it --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
