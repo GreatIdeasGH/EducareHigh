@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.1.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.8.1...v3.1.0) (2026-02-04)
+
+### 🚀 Features
+
+* add Automate project with initial setup and Hello World example ([1617c77](https://github.com/GreatIdeasGH/EducareHigh/commit/1617c77ec03451115d604b3e01f3f3208122b713)), closes [#25](https://github.com/GreatIdeasGH/EducareHigh/issues/25)
+
+### 🐛 Bug Fixes
+
+* add conditional commit for updated package.json version in CI workflow ([3530878](https://github.com/GreatIdeasGH/EducareHigh/commit/3530878506097ce16841f7908eb7ad363266787f))
+* add git status check after committing package.json version update in CI workflow ([650d2fc](https://github.com/GreatIdeasGH/EducareHigh/commit/650d2fcae03e81155e9488ffdb08d46268394c31))
+* remove unnecessary Git configuration in CI workflow ([17225a7](https://github.com/GreatIdeasGH/EducareHigh/commit/17225a7eeab3aa8ddf9765f7fd74d7da3e6b537c))
+* simplify Git commit process in CI workflow by removing unnecessary steps ([ad84e9a](https://github.com/GreatIdeasGH/EducareHigh/commit/ad84e9af7e178d202f897e43b080ae169a4280f0))
+* streamline version update process in CI workflow ([f94b5c2](https://github.com/GreatIdeasGH/EducareHigh/commit/f94b5c2ec416cec353aa74f12182c02a9748b520))
+* update Git add command to stage all changes and improve commit process ([9bb61d3](https://github.com/GreatIdeasGH/EducareHigh/commit/9bb61d35e5f09dff79f7986fd0aaf16ded9164b5))
+* update package.json version commit process in CI workflow to stage only necessary changes ([7269b48](https://github.com/GreatIdeasGH/EducareHigh/commit/7269b48bcbb42708ae15f76a187a86a0ab1d074a))
+
+### 🧰 Maintenance
+
+* update package.json version to 3.0.0 [skip ci] ([540bb0c](https://github.com/GreatIdeasGH/EducareHigh/commit/540bb0c490ba50040732bcbbd893ba73097c5f61))
+* update version to 3.0.0 in version.json ([590bf4e](https://github.com/GreatIdeasGH/EducareHigh/commit/590bf4e2941b96d9f25cc6c270a7fa9e2f399fd9))
+
 ## [2.8.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.7.0...v2.8.1) (2026-02-04)
 
 ### 🐛 Bug Fixes
