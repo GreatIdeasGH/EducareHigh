@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.2.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.1.0...v3.2.0) (2026-02-04)
+
+### 🚀 Features
+
+* update namespace declarations in dataservice files for consistency ([e280532](https://github.com/GreatIdeasGH/EducareHigh/commit/e280532b087cf97bcfcec43825b436a6c403637a))
+
+### 🐛 Bug Fixes
+
+* resolve merge conflict in CHANGELOG.md and update version format in version.json ([486737d](https://github.com/GreatIdeasGH/EducareHigh/commit/486737d79a9ea75c3281f7448988b03216721f6b))
+
+### 🧰 Maintenance
+
+* release v3.1.0 ([90970c7](https://github.com/GreatIdeasGH/EducareHigh/commit/90970c7b8c8e4b6b333765f5566d3d07a6a58f7f))
+* update package.json version to 3.0.0 [skip ci] ([3cfa5cf](https://github.com/GreatIdeasGH/EducareHigh/commit/3cfa5cf7df7b6362828212832f212b222792dcb9))
+* update version to 3.1.0 in version.json ([c1ea584](https://github.com/GreatIdeasGH/EducareHigh/commit/c1ea584a3e9bb4eee1f97eb9b4e6ee22388fb875))
+
 * chore: update package.json version to 3.0.0 [skip ci] (3cfa5cf)
 * Merge branch 'v3.0.x' of https://github.com/GreatIdeasGH/EducareHigh into v3.0.x (d9c6941)
 * feat: update namespace declarations in dataservice files for consistency (e280532)
