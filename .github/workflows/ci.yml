@@ -43,7 +43,6 @@ jobs:
 
       - name: Update package.json version
         run: |
-          cd src/greatideas-campus-frontend
           echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
           # Use jq to safely update the version field
           jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
