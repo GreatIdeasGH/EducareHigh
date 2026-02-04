@@ -58,6 +58,8 @@ jobs:
             git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
             git push
           fi
+          # Show git changes
+          git status
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
