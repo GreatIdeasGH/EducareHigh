@@ -48,13 +48,15 @@ jobs:
           jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
           mv package.tmp.json package.json
           cat package.json
+          # Show git changes
+          git status
           # Commit the changes if there are any
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if git diff --staged --quiet; then
+          if git diff --quiet; then
             echo "No changes to commit"
           else
-            git add .
+            git add package.json
             git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
             git push
           fi
