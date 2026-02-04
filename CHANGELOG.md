@@ -1,5 +1,9 @@
 # Changelog
 
+* chore: update package.json version to 3.0.0 [skip ci] (3cfa5cf)
+* Merge branch 'v3.0.x' of https://github.com/GreatIdeasGH/EducareHigh into v3.0.x (d9c6941)
+* feat: update namespace declarations in dataservice files for consistency (e280532)
+
 ## [3.1.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.8.1...v3.1.0) (2026-02-04)
 
 ### 🚀 Features
