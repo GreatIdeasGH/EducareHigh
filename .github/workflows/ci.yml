@@ -41,27 +41,27 @@ jobs:
           path: .
           setCommonVars: true
 
-      - name: Update package.json version
-        run: |
-          echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
-          # Use jq to safely update the version field
-          jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
-          mv package.tmp.json package.json
-          cat package.json
-          # Show git changes
-          git status
-          # Commit the changes if there are any
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add package.json
-            git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
-            git push
-          fi
-          # Show git changes
-          git status
+      # - name: Update package.json version
+      #   run: |
+      #     echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
+      #     # Use jq to safely update the version field
+      #     jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
+      #     mv package.tmp.json package.json
+      #     cat package.json
+      #     # Show git changes
+      #     git status
+      #     # Commit the changes if there are any
+      #     git config user.name "${GITHUB_ACTOR}"
+      #     git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+      #     if git diff --quiet; then
+      #       echo "No changes to commit"
+      #     else
+      #       git add package.json
+      #       git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
+      #       git push
+      #     fi
+      #     # Show git changes
+      #     git status
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -73,10 +73,13 @@ jobs:
         run: npm ci
 
       - name: Set up Git to release
+        id: releaseit
         run: |
           # Show git changes
           git status
           npx release-it --ci
+          # Show outputs
+          echo "Release version: ${{ steps.releaseit }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
