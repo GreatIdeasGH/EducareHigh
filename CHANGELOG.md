@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.2...v3.2.3) (2026-02-06)
+
+### 🧰 Maintenance
+
+* remove CURRENT_TAG variable and update Docker image tag to latest ([4eceef9](https://github.com/GreatIdeasGH/EducareHigh/commit/4eceef97a2c25e8a93992a03a6c86831bbf73544))
+
 ## [3.2.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.1...v3.2.2) (2026-02-06)
 
 ## [3.2.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.0...v3.2.1) (2026-02-04)
