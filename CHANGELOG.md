@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.3...v3.2.4) (2026-02-06)
+
+### 🧰 Maintenance
+
+* update actions/checkout and docker/metadata-action versions in CI workflow ([4907a2b](https://github.com/GreatIdeasGH/EducareHigh/commit/4907a2b3c35fddc54b891482def5ebe640aa530b))
+
 ## [3.2.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.2...v3.2.3) (2026-02-06)
 
 ### 🧰 Maintenance
