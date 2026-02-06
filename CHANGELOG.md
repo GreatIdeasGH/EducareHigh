@@ -1,5 +1,56 @@
 # Changelog
 
+## [3.2.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.0...v3.2.1) (2026-02-04)
+
+### 🐛 Bug Fixes
+
+* configure Git user for release-it in CI workflow ([78dff7b](https://github.com/GreatIdeasGH/EducareHigh/commit/78dff7b73534120cef0fb71b019ce236b99480f2))
+
+### 🧰 Maintenance
+
+* comment out package.json version update step in CI workflow ([3031534](https://github.com/GreatIdeasGH/EducareHigh/commit/30315345ad518cd7df6450822d22a2d48e860f21))
+
+## [3.2.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.1.0...v3.2.0) (2026-02-04)
+
+### 🚀 Features
+
+* update namespace declarations in dataservice files for consistency ([e280532](https://github.com/GreatIdeasGH/EducareHigh/commit/e280532b087cf97bcfcec43825b436a6c403637a))
+
+### 🐛 Bug Fixes
+
+* resolve merge conflict in CHANGELOG.md and update version format in version.json ([486737d](https://github.com/GreatIdeasGH/EducareHigh/commit/486737d79a9ea75c3281f7448988b03216721f6b))
+
+### 🧰 Maintenance
+
+* release v3.1.0 ([90970c7](https://github.com/GreatIdeasGH/EducareHigh/commit/90970c7b8c8e4b6b333765f5566d3d07a6a58f7f))
+* update package.json version to 3.0.0 [skip ci] ([3cfa5cf](https://github.com/GreatIdeasGH/EducareHigh/commit/3cfa5cf7df7b6362828212832f212b222792dcb9))
+* update version to 3.1.0 in version.json ([c1ea584](https://github.com/GreatIdeasGH/EducareHigh/commit/c1ea584a3e9bb4eee1f97eb9b4e6ee22388fb875))
+
+* chore: update package.json version to 3.0.0 [skip ci] (3cfa5cf)
+* Merge branch 'v3.0.x' of https://github.com/GreatIdeasGH/EducareHigh into v3.0.x (d9c6941)
+* feat: update namespace declarations in dataservice files for consistency (e280532)
+
+## [3.1.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.8.1...v3.1.0) (2026-02-04)
+
+### 🚀 Features
+
+* add Automate project with initial setup and Hello World example ([1617c77](https://github.com/GreatIdeasGH/EducareHigh/commit/1617c77ec03451115d604b3e01f3f3208122b713)), closes [#25](https://github.com/GreatIdeasGH/EducareHigh/issues/25)
+
+### 🐛 Bug Fixes
+
+* add conditional commit for updated package.json version in CI workflow ([3530878](https://github.com/GreatIdeasGH/EducareHigh/commit/3530878506097ce16841f7908eb7ad363266787f))
+* add git status check after committing package.json version update in CI workflow ([650d2fc](https://github.com/GreatIdeasGH/EducareHigh/commit/650d2fcae03e81155e9488ffdb08d46268394c31))
+* remove unnecessary Git configuration in CI workflow ([17225a7](https://github.com/GreatIdeasGH/EducareHigh/commit/17225a7eeab3aa8ddf9765f7fd74d7da3e6b537c))
+* simplify Git commit process in CI workflow by removing unnecessary steps ([ad84e9a](https://github.com/GreatIdeasGH/EducareHigh/commit/ad84e9af7e178d202f897e43b080ae169a4280f0))
+* streamline version update process in CI workflow ([f94b5c2](https://github.com/GreatIdeasGH/EducareHigh/commit/f94b5c2ec416cec353aa74f12182c02a9748b520))
+* update Git add command to stage all changes and improve commit process ([9bb61d3](https://github.com/GreatIdeasGH/EducareHigh/commit/9bb61d35e5f09dff79f7986fd0aaf16ded9164b5))
+* update package.json version commit process in CI workflow to stage only necessary changes ([7269b48](https://github.com/GreatIdeasGH/EducareHigh/commit/7269b48bcbb42708ae15f76a187a86a0ab1d074a))
+
+### 🧰 Maintenance
+
+* update package.json version to 3.0.0 [skip ci] ([540bb0c](https://github.com/GreatIdeasGH/EducareHigh/commit/540bb0c490ba50040732bcbbd893ba73097c5f61))
+* update version to 3.0.0 in version.json ([590bf4e](https://github.com/GreatIdeasGH/EducareHigh/commit/590bf4e2941b96d9f25cc6c270a7fa9e2f399fd9))
+
 ## [2.8.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v2.7.0...v2.8.1) (2026-02-04)
 
 ### 🐛 Bug Fixes
@@ -294,11 +345,6 @@
 
 * Add Product entity class ([f55fad2](https://github.com/GreatIdeasGH/EducareHigh/commit/f55fad23772b009d5e007b3083ea9b151d4902c0))
 
-<<<<<<< HEAD
-
-
-## [1.18.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.3...v1.18.2) (2024-03-16)
-=======
 # Semantic Versioning Changelog
 
 ## [1.19.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.3...v1.19.4) (2024-03-16)
@@ -309,7 +355,6 @@
 * Add release-it to devDependencies and create .release-it.json configuration file ([2dbcd2d](https://github.com/GreatIdeasGH/EducareHigh/commit/2dbcd2d72a8e31081fbe60a16fc0c95bea204169))
 
 ## [1.19.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v1.19.3...v1.19.4) (2024-03-16)
->>>>>>> 0ff8d5816952e0e6a82b842954f28d3bb9eb9eea
 
 
 ### Bug Fixes

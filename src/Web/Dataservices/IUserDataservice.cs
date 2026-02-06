@@ -1,6 +1,6 @@
 using GreatIdeas.EducareHigh.Web.DTOs;
 
-namespace GreatIdeas.EducareHigh.Web;
+namespace GreatIdeas.EducareHigh.Web.Dataservices;
 
 public interface IUserDataservice
 {
