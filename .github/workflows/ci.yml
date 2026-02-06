@@ -29,7 +29,7 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -60,28 +60,38 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: version
+      # NEW: Resolve the latest tag created by release-it
+      - name: Resolve release tag
         id: version
         run: |
-          tag=${GITHUB_REF/refs\/tags\//}
+          # Make sure we see pushed tags
+          git fetch --tags --force
+          tag=$(git describe --tags --abbrev=0)
           version=${tag#v}
           major=${version%%.*}
           echo "tag=${tag}" >> $GITHUB_OUTPUT
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo "major=${major}" >> $GITHUB_OUTPUT
-          echo version: ${{ steps.version.outputs.version }}
+          echo "Resolved tag: $tag | version: $version | major: $major"
 
       - name: Generate Docker metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: docker.io/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
+            # The exact semver (e.g. 1.4.3)
+            type=raw,value=${{ steps.version.outputs.version }}
+            # The major line (e.g. 1)
+            type=raw,value=${{ steps.version.outputs.major }}
           flavor: |
-            latest=true
+            latest=false
 
-      - name: Build Docker image
-        run: |
-          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest .
+      - name: Build and push image(s)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: src/Web/Dockerfile
+          push: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
