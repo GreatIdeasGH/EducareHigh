@@ -13,7 +13,6 @@ permissions: {}
 
 env:
   IMAGE_NAME: "greatideasgh/educarehigh"
-  CURRENT_TAG: "latest"
 
 defaults:
   run:
@@ -41,28 +40,6 @@ jobs:
           path: .
           setCommonVars: true
 
-      # - name: Update package.json version
-      #   run: |
-      #     echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
-      #     # Use jq to safely update the version field
-      #     jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
-      #     mv package.tmp.json package.json
-      #     cat package.json
-      #     # Show git changes
-      #     git status
-      #     # Commit the changes if there are any
-      #     git config user.name "${GITHUB_ACTOR}"
-      #     git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      #     if git diff --quiet; then
-      #       echo "No changes to commit"
-      #     else
-      #       git add package.json
-      #       git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
-      #       git push
-      #     fi
-      #     # Show git changes
-      #     git status
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -80,10 +57,19 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           npx release-it --ci
-          # Show outputs
-          echo "Release version: ${{ steps.releaseit }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: version
+        id: version
+        run: |
+          tag=${GITHUB_REF/refs\/tags\//}
+          version=${tag#v}
+          major=${version%%.*}
+          echo "tag=${tag}" >> $GITHUB_OUTPUT
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo "major=${major}" >> $GITHUB_OUTPUT
+          echo version: ${{ steps.version.outputs.version }}
 
       - name: Generate Docker metadata
         id: meta
@@ -98,4 +84,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.CURRENT_TAG }} .
+          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest .
