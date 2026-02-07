@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v4.0.0...v4.1.0) (2026-02-07)
+
+### 🚀 Features
+
+* update versioning in CI workflow and add package.json for Automate ([9458667](https://github.com/GreatIdeasGH/EducareHigh/commit/94586673bae142492f2522a6b3426f8a0742f42e))
+
 ## [4.0.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.7...v4.0.0) (2026-02-07)
 
 ### ⚠ BREAKING CHANGES
