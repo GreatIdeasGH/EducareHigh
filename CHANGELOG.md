@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.6...v3.2.7) (2026-02-07)
+
+### 🧰 Maintenance
+
+* update CI workflow to push changes to version.json after release ([ec05daf](https://github.com/GreatIdeasGH/EducareHigh/commit/ec05daffbeaa18283b963e330e17fb055b7caa77))
+
 ## [3.2.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.5...v3.2.6) (2026-02-07)
 
 ### 🧰 Maintenance
