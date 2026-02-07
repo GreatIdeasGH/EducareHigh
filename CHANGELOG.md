@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.5](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.4...v3.2.5) (2026-02-06)
+
+### 🧰 Maintenance
+
+* remove obsolete GitHub workflows for Docker and release management ([e3c74fc](https://github.com/GreatIdeasGH/EducareHigh/commit/e3c74fcc3343b8fe7e72d50ecb889f05b95d758a))
+
 ## [3.2.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.3...v3.2.4) (2026-02-06)
 
 ### 🧰 Maintenance
