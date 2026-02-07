@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.0.0](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.7...v4.0.0) (2026-02-07)
+
+### ⚠ BREAKING CHANGES
+
+* remove outdated development setup instructions from DEVELOPERS.md
+
+### 🚀 Features
+
+* remove outdated development setup instructions from DEVELOPERS.md ([4d19ab4](https://github.com/GreatIdeasGH/EducareHigh/commit/4d19ab4e95c5d4032b280ea7e90bfd63d049e71d)), closes [#31](https://github.com/GreatIdeasGH/EducareHigh/issues/31)
+
 ## [3.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.6...v3.2.7) (2026-02-07)
 
 ### 🧰 Maintenance
