@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.5...v3.2.6) (2026-02-07)
+
+### 🧰 Maintenance
+
+* update version.json during CI workflow and reorder NBGV installation ([2fb8fe2](https://github.com/GreatIdeasGH/EducareHigh/commit/2fb8fe2ccf3d0928f20a76fe351b0de142f2caee))
+
 ## [3.2.5](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.4...v3.2.5) (2026-02-06)
 
 ### 🧰 Maintenance
