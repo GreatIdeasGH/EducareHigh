@@ -13,7 +13,6 @@ permissions: {}
 
 env:
   IMAGE_NAME: "greatideasgh/educarehigh"
-  CURRENT_TAG: "latest"
 
 defaults:
   run:
@@ -30,38 +29,9 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-
-      - name: Install NBGV tool
-        uses: dotnet/nbgv@v0.4.2
-        id: nbgv
-        with:
-          path: .
-          setCommonVars: true
-
-      # - name: Update package.json version
-      #   run: |
-      #     echo "Updating package.json version to ${{ steps.nbgv.outputs.SemVer2 }}"
-      #     # Use jq to safely update the version field
-      #     jq '.version = "${{ steps.nbgv.outputs.SemVer2 }}"' package.json > package.tmp.json
-      #     mv package.tmp.json package.json
-      #     cat package.json
-      #     # Show git changes
-      #     git status
-      #     # Commit the changes if there are any
-      #     git config user.name "${GITHUB_ACTOR}"
-      #     git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-      #     if git diff --quiet; then
-      #       echo "No changes to commit"
-      #     else
-      #       git add package.json
-      #       git commit -m "chore: update package.json version to ${{ steps.nbgv.outputs.SemVer2 }} [skip ci]"
-      #       git push
-      #     fi
-      #     # Show git changes
-      #     git status
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -80,22 +50,62 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           npx release-it --ci
-          # Show outputs
-          echo "Release version: ${{ steps.releaseit }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # NEW: Resolve the latest tag created by release-it
+      - name: Resolve release tag
+        id: version
+        run: |
+          # Make sure we see pushed tags
+          git fetch --tags --force
+          tag=$(git describe --tags --abbrev=0)
+          version=${tag#v}
+          major=${version%%.*}
+          echo "tag=${tag}" >> $GITHUB_OUTPUT
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo "major=${major}" >> $GITHUB_OUTPUT
+          echo "Resolved tag: $tag | version: $version | major: $major"
+
+      - name: Update version.json
+        run: |
+          echo "Updating version.json version to ${{ steps.version.outputs.version }}"
+          # Use jq to safely update the version field
+          jq '.version = "${{ steps.version.outputs.version }}"' version.json > version.tmp.json
+          mv version.tmp.json version.json
+          cat version.json
+          # Commit the updated version.json
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add version.json
+          git commit -m "Update version.json to ${{ steps.version.outputs.version }}"
+          git push
+
+      - name: Install NBGV tool
+        uses: dotnet/nbgv@v0.4.2
+        id: nbgv
+        with:
+          path: .
+          setCommonVars: true
+
       - name: Generate Docker metadata
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v5
         with:
           images: docker.io/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
+            # The exact semver (e.g. 1.4.3)
+            type=raw,value=${{ steps.version.outputs.version }}
+            # The major line (e.g. 1)
+            type=raw,value=${{ steps.version.outputs.major }}
           flavor: |
-            latest=true
+            latest=false
 
-      - name: Build Docker image
-        run: |
-          docker build --file src/Web/Dockerfile --tag ${{ env.IMAGE_NAME }}:${{ env.CURRENT_TAG }} .
+      - name: Build and push image(s)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: src/Web/Dockerfile
+          push: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

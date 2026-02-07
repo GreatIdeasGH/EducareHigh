@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.2.7](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.6...v3.2.7) (2026-02-07)
+
+### 🧰 Maintenance
+
+* update CI workflow to push changes to version.json after release ([ec05daf](https://github.com/GreatIdeasGH/EducareHigh/commit/ec05daffbeaa18283b963e330e17fb055b7caa77))
+
+## [3.2.6](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.5...v3.2.6) (2026-02-07)
+
+### 🧰 Maintenance
+
+* update version.json during CI workflow and reorder NBGV installation ([2fb8fe2](https://github.com/GreatIdeasGH/EducareHigh/commit/2fb8fe2ccf3d0928f20a76fe351b0de142f2caee))
+
+## [3.2.5](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.4...v3.2.5) (2026-02-06)
+
+### 🧰 Maintenance
+
+* remove obsolete GitHub workflows for Docker and release management ([e3c74fc](https://github.com/GreatIdeasGH/EducareHigh/commit/e3c74fcc3343b8fe7e72d50ecb889f05b95d758a))
+
+## [3.2.4](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.3...v3.2.4) (2026-02-06)
+
+### 🧰 Maintenance
+
+* update actions/checkout and docker/metadata-action versions in CI workflow ([4907a2b](https://github.com/GreatIdeasGH/EducareHigh/commit/4907a2b3c35fddc54b891482def5ebe640aa530b))
+
+## [3.2.3](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.2...v3.2.3) (2026-02-06)
+
+### 🧰 Maintenance
+
+* remove CURRENT_TAG variable and update Docker image tag to latest ([4eceef9](https://github.com/GreatIdeasGH/EducareHigh/commit/4eceef97a2c25e8a93992a03a6c86831bbf73544))
+
+## [3.2.2](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.1...v3.2.2) (2026-02-06)
+
 ## [3.2.1](https://github.com/GreatIdeasGH/EducareHigh/compare/v3.2.0...v3.2.1) (2026-02-04)
 
 ### 🐛 Bug Fixes
