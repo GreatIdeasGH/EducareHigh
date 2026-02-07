@@ -79,6 +79,7 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add version.json
           git commit -m "Update version.json to ${{ steps.version.outputs.version }}"
+          git push
 
       - name: Install NBGV tool
         uses: dotnet/nbgv@v0.4.2
@@ -86,10 +87,6 @@ jobs:
         with:
           path: .
           setCommonVars: true
-
-      - name: Get version from NBGV
-        id: nbgv_version
-        run: echo "version:$(nbgv get-version)
 
       - name: Generate Docker metadata
         id: meta
