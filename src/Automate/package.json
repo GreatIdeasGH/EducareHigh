@@ -1,0 +1,9 @@
+{
+  "name": "aautomate",
+  "description": "",
+  "author": "geraldmaale",
+  "scripts": {
+    "build": "dotnet build --tl"
+  },
+  "version": "0.0.0"
+}
